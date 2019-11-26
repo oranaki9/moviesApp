@@ -1,0 +1,20 @@
+@import "../../../../styles.scss";
+
+.carousel-inner,
+.carousel-item,
+img {
+  height: 92vh;
+}
+
+.carousel-caption {
+  color: $accent;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 20px;
+}
+
+.info-msg {
+  background: $accent;
+  color: white;
+  cursor: pointer;
+  text-align: center;
+}

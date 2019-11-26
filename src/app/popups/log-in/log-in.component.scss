@@ -1,0 +1,8 @@
+@import "../../../styles.scss";
+:host {
+  background: $modal-background;
+}
+
+.modal-dialog {
+  height: 0;
+}

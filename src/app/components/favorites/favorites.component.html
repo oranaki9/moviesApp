@@ -1,0 +1,26 @@
+<div class="spinner__flex-container" *ngIf="isLoading | async">
+  <mat-spinner></mat-spinner>
+</div>
+<ng-template
+  *ngIf="
+    (favoriteMovies | async).length !== 0;
+    then showFavorieMovies;
+    else showEmptyMsg
+  "
+>
+</ng-template>
+
+<ng-template #showFavorieMovies>
+  <app-movies-crousel
+    [movies]="favoriteMovies | async"
+    [isHomePage]="false"
+  ></app-movies-crousel>
+</ng-template>
+
+<ng-template #showEmptyMsg>
+  <div class="empty__favorite-massage-container">
+    <span lass="empty__favorite-massage">
+      No movies on Favorite yet.
+    </span>
+  </div>
+</ng-template>

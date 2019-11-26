@@ -1,0 +1,8 @@
+<div class="spinner__flex-container" *ngIf="isLoading | async">
+  <mat-spinner></mat-spinner>
+</div>
+<app-movies-crousel
+  *ngIf="!(isLoading | async)"
+  [movies]="movies | async"
+  [isHomePage]="true"
+></app-movies-crousel>

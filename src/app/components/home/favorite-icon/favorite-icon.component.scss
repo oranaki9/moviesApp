@@ -1,0 +1,23 @@
+@import "../../../../styles.scss";
+
+i {
+  color: $accent;
+  font-size: 2rem;
+}
+:host {
+  position: absolute;
+  color: $accent;
+  font-size: 2rem;
+  z-index: 2000;
+  bottom: 2rem;
+  right: 1.5rem;
+  cursor: pointer;
+}
+@media (min-width: 40rem) {
+  i {
+    font-size: 4rem;
+  }
+  .add {
+    display: none;
+  }
+}

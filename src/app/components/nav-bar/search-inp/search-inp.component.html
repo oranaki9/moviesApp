@@ -1,0 +1,24 @@
+<div class="flex__container">
+  <input type="text" placeholder="Search movie" [(ngModel)]="searchText" />
+  <div>
+    <button
+      *ngIf="searchText"
+      class="close__icon"
+      mat-button
+      matSuffix
+      mat-icon-button
+      aria-label="Clear"
+      (click)="searchText = ''"
+    >
+      <mat-icon>close</mat-icon>
+    </button>
+    <button
+      mat-raised-button
+      routerLink="."
+      (click)="serachMovie()"
+      [disabled]="searchText === ''"
+    >
+      Search
+    </button>
+  </div>
+</div>

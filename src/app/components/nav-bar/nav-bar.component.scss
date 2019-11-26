@@ -1,0 +1,61 @@
+@import "../../../styles.scss";
+
+mat-toolbar {
+  display: flex;
+  justify-content: space-between;
+  height: 3rem;
+}
+
+.header__my-movies,
+.auth__buttons,
+.desktop__search-input {
+  display: none;
+}
+
+span {
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+}
+
+.mobile__search-input {
+  display: block;
+  width: 100%;
+}
+
+span:focus {
+  outline: none;
+}
+.mobile__side-nav {
+  background: $accent;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 101;
+  width: 80%;
+  height: 100vh;
+  padding: 1rem;
+}
+
+.material-icons {
+  vertical-align: bottom;
+}
+
+.active {
+  color: darkturquoise;
+}
+@media (min-width: 40rem) {
+  .mobile__toggle-menu,
+  .mobile__side-nav,
+  .mobile__search-input,
+  .backdrop {
+    display: none;
+  }
+
+  .header__my-movies,
+  .auth__buttons,
+  .desktop__search-input {
+    display: inline;
+  }
+}

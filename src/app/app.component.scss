@@ -1,0 +1,17 @@
+header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+main {
+  margin-top: 3rem;
+  position: relative;
+  z-index: 9;
+}
+@media (min-width: 55rem) {
+  main {
+    margin: 3rem 15rem 0rem 15rem;
+  }
+}

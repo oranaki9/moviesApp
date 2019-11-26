@@ -1,0 +1,21 @@
+i {
+  color: red;
+  font-size: 2rem;
+}
+:host {
+  position: absolute;
+  color: red;
+  font-size: 2rem;
+  z-index: 2000;
+  bottom: 2rem;
+  right: 1.5rem;
+  cursor: pointer;
+}
+@media (min-width: 40rem) {
+  i {
+    font-size: 4rem;
+  }
+  .add {
+    display: none;
+  }
+}

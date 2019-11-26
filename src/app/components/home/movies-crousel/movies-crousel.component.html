@@ -1,0 +1,33 @@
+<mdb-carousel
+  class="carousel slide carousel-fade"
+  [animation]="'fade'"
+  [(activeSlide)]="activeSlideIndex"
+  [interval]="'2000'"
+>
+  <mdb-carousel-item *ngFor="let movie of movies">
+    <div class="view w-100">
+      <img
+        class="d-block w-100"
+        [src]="movie.Poster"
+        alt="The Movie Poster Not Available At This Time."
+      />
+      <div class="mask rgba-black-slight waves-light" mdbWavesEffect></div>
+    </div>
+    <div>
+      <div class="carousel-caption" >
+        <h3 class="h3-responsive">{{ movie.Title }}</h3>
+        <p>{{ movie.Year }}</p>
+      </div>
+    </div>
+  </mdb-carousel-item>
+  <app-favorite-icon
+    [activeSlideIndex]="activeSlideIndex"
+    *ngIf="isHomePage"
+  ></app-favorite-icon>
+  <app-delete *ngIf="!isHomePage" [activeSlideIndex]="activeSlideIndex">
+  </app-delete>
+  <app-add-icon
+    [activeSlideIndex]="activeSlideIndex"
+    [isHomePage]="isHomePage"
+  ></app-add-icon>
+</mdb-carousel>

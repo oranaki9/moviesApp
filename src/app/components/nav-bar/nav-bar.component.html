@@ -1,0 +1,76 @@
+<div class="backdrop" *ngIf="backDrop" (click)="closeSideNav()"></div>
+<div class="mobile__side-nav" *ngIf="sideNav">
+  <span
+    [routerLink]="['/']"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
+    (click)="closeSideNav()"
+  >
+    Home
+  </span>
+
+  <div class="header__mymovies-mobile">
+    <i class="material-icons">
+      movie
+    </i>
+    <span
+      [routerLink]="['my-movies']"
+      routerLinkActive="active"
+      (click)="closeSideNav()"
+    >
+      My Movies
+    </span>
+  </div>
+  <div class="auth__buttons-mobile">
+    <span
+      (click)="openDialog('signIn'); closeSideNav()"
+      *ngIf="!(isAuth | async)"
+      >Sign Up</span
+    >
+    <span *ngIf="!(isAuth | async)">|</span>
+
+    <span
+      (click)="openDialog('logIn'); closeSideNav()"
+      *ngIf="!(isAuth | async)"
+      >Log In</span
+    >
+    <span (click)="closeSideNav(); logOut()" *ngIf="isAuth | async"
+      >Log Out</span
+    >
+  </div>
+</div>
+<mat-toolbar id="main__navbar" color="accent">
+  <div class="mobile__toggle-menu" (click)="openSideNav()">
+    <i class="material-icons">
+      dehaze
+    </i>
+  </div>
+  <div class="header__my-movies">
+    <span
+      [routerLink]="['/']"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      Home
+    </span>
+
+    <span>|</span>
+
+    <span [routerLink]="['my-movies']" routerLinkActive="active">
+      My Movies
+    </span>
+  </div>
+
+  <app-search-inp class="desktop__search-input"></app-search-inp>
+
+  <div class="auth__buttons">
+    <span (click)="openDialog('signIn')" *ngIf="!(isAuth | async)"
+      >Sign Up</span
+    >
+    <span *ngIf="!(isAuth | async)">|</span>
+
+    <span (click)="openDialog('logIn')" *ngIf="!(isAuth | async)">Log In</span>
+    <span *ngIf="isAuth | async" (click)="logOut()">Log Out</span>
+  </div>
+</mat-toolbar>
+<app-search-inp class="mobile__search-input"></app-search-inp>
