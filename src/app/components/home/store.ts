@@ -1,4 +1,4 @@
-import { ShortMovie } from "./movies-crousel/shortMovie.interface";
+import { ShortMovie } from './movies-crousel/shortMovie.interface';
 
 export interface IHomeMoviesState {
   randomMovies: ShortMovie[];

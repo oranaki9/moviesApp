@@ -1,6 +1,6 @@
 import { Component, Input, ChangeDetectionStrategy } from "@angular/core";
 import { UtilsService } from "src/app/utils/utils.service";
-import { ShortMovie } from "./shortMovie.interface";
+import { ShortMovie } from "../movies-crousel/ShortMovie.interface";
 
 @Component({
   selector: "app-movies-crousel",
@@ -17,5 +17,4 @@ export class MoviesCrouselComponent {
   openDialog(dialogName: string): void {
     this.utils.openDialog(dialogName);
   }
-
 }
