@@ -19,7 +19,10 @@ export class SignInComponent implements OnInit {
   ngOnInit() {
     this.validatingForm = new FormGroup({
       signupFormModalName: new FormControl("", Validators.required),
-      signupFormModalEmail: new FormControl("", Validators.email),
+      signupFormModalEmail: new FormControl(
+        "",
+        Validators.compose([Validators.email, Validators.required])
+      ),
       signupFormModalPassword: new FormControl("", Validators.required)
     });
   }

@@ -10,7 +10,7 @@ export class MoviesServiceService {
     private http: HttpClient,
     @Inject("API_URL") private apiUrl,
     @Inject("OMDB_API_KEY") private apiKey,
-    private auth: AuthService
+    private auth: AuthService,
   ) {}
   getNewMovies() {
     const q = `${this.apiUrl}?s=batman&type=movie&apikey=${this.apiKey}`;
@@ -31,14 +31,14 @@ export class MoviesServiceService {
 
   getFavoriteMovies() {
     const token = this.auth.getToken();
-    return this.http.post(`api/favorite`, {
+    return this.http.post(`http://localhost:3000/api/favorite`, {
       token: token
     });
   }
   addToFavorite(imdbId: string) {
     const token = this.auth.getToken();
 
-    return this.http.put("api/addFavorite", {
+    return this.http.put("http://localhost:3000/api/addFavorite", {
       imdbId: imdbId,
       token: token
     });
@@ -47,7 +47,7 @@ export class MoviesServiceService {
     const userId = this.auth.getAuthData().userId;
 
     return this.http.delete(
-      `api/favorite/${userId}/${imdbId}`
+      `http://localhost:3000/api/favorite/${userId}/${imdbId}`
     );
   }
 }

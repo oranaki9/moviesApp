@@ -8,7 +8,7 @@ import {
   HttpClientTestingModule,
   HttpTestingController
 } from "@angular/common/http/testing";
-describe("LogInComponent", () => {
+xdescribe("LogInComponent", () => {
   let component: LogInComponent;
   let fixture: ComponentFixture<LogInComponent>;
 

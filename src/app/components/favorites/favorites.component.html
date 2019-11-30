@@ -3,7 +3,7 @@
 </div>
 <ng-template
   *ngIf="
-    (favoriteMovies | async).length !== 0;
+    (favoriteMovies | async)?.length !== 0;
     then showFavorieMovies;
     else showEmptyMsg
   "

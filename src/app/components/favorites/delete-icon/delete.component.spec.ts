@@ -4,7 +4,7 @@ import { DeleteComponent } from './delete.component';
 import { HttpClientModule } from '@angular/common/http';
 import { tmdbSearchInjectables } from 'src/app/movies-service/tmdb-search-Injectables';
 
-describe('DeleteComponent', () => {
+xdescribe('DeleteComponent', () => {
   let component: DeleteComponent;
   let fixture: ComponentFixture<DeleteComponent>;
 

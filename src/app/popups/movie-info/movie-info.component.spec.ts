@@ -3,7 +3,7 @@ import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 import { MovieInfoComponent } from "./movie-info.component";
 import { MDBBootstrapModule } from "angular-bootstrap-md";
 
-describe("MovieInfoComponent", () => {
+xdescribe("MovieInfoComponent", () => {
   let component: MovieInfoComponent;
   let fixture: ComponentFixture<MovieInfoComponent>;
 

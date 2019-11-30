@@ -34,6 +34,7 @@ export function homeMoviesReducer(
 
       return {
         ...state,
+        isLoading: false,
         favoriteMovies: action.payload
       };
     }

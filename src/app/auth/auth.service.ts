@@ -7,7 +7,7 @@ import { NgRedux } from "@angular-redux/store";
   providedIn: "root"
 })
 export class AuthService {
-  API_URL = "api";
+  API_URL = "http://localhost:3000/api";
 
   constructor(
     private http: HttpClient,

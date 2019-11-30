@@ -7,7 +7,7 @@ import {
   HttpTestingController
 } from "@angular/common/http/testing";
 
-describe("MoviesCrouselComponent", () => {
+xdescribe("MoviesCrouselComponent", () => {
   let component: MoviesCrouselComponent;
   let fixture: ComponentFixture<MoviesCrouselComponent>;
 

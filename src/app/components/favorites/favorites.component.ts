@@ -3,8 +3,7 @@ import {
   OnInit,
   OnDestroy,
   ChangeDetectionStrategy,
-  ChangeDetectorRef,
-  ViewChild
+  ChangeDetectorRef
 } from "@angular/core";
 import { NgRedux, select } from "@angular-redux/store";
 import { IAppState } from "src/app/store";
@@ -28,16 +27,15 @@ export class FavoritesComponent implements OnInit, OnDestroy {
     private cd: ChangeDetectorRef
   ) {}
 
-
   ngOnInit() {
+    this.ngRedux.dispatch({
+      type: "FATCH_MOVIES_REQUEST"
+    });
     const favoriteMoviesLen = this.ngRedux.getState().homeMovies
       .favoriteMoviesIds.length;
 
     // check if the favorite movies allredy loaded from server
     if (favoriteMoviesLen === 0) {
-      this.ngRedux.dispatch({
-        type: "FATCH_MOVIES_REQUEST"
-      });
       this.favoriteMoviesIdsSub = this.imdb
         .getFavoriteMovies()
         .subscribe((result: { favoriteMovies: string[] }) => {
@@ -69,7 +67,7 @@ export class FavoritesComponent implements OnInit, OnDestroy {
         .findMovieById(imdbId)
         .subscribe((result: any) => {
           myMovies.push(result);
-          this.cd.markForCheck();
+          this.cd.detectChanges();
         });
     });
 
