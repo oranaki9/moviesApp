@@ -6,7 +6,6 @@ import { AppComponent } from "./app.component";
 import { MDBBootstrapModule } from "angular-bootstrap-md";
 import { NavBarComponent } from "./components/nav-bar/nav-bar.component";
 import { HomeComponent } from "./components/home/home.component";
-import { tmdbSearchInjectables } from "./movies-service/tmdb-search-Injectables";
 import { AppRoutingModule } from "./app-routing.module";
 import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { modalsComponents } from "./popups/modals-components";
@@ -40,7 +39,6 @@ import { HttpErrorInterceptor } from "./error.inteceptor";
   ],
   entryComponents: [modalsComponents],
   providers: [
-    tmdbSearchInjectables,
     { provide: HTTP_INTERCEPTORS, useClass: HttpErrorInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]

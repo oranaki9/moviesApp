@@ -1,7 +1,6 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 import { HomeComponent } from "./components/home/home.component";
-import { FavoritesComponent } from "./components/favorites/favorites.component";
 import { AuthGuardService } from "./auth/AuthGuard";
 
 const routes: Routes = [
@@ -14,13 +13,12 @@ const routes: Routes = [
       ),
     canActivate: [AuthGuardService]
   },
-
   { path: "**", redirectTo: "" }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
-  providers:[AuthGuardService]
+  providers: [AuthGuardService]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

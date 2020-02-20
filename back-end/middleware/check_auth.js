@@ -5,7 +5,6 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 module.exports = (req, res, next) => {
-  console.log(req.body);
   try {
     const decodedToken = jwt.verify(
       req.body.token,

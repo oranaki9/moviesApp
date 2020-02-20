@@ -10,5 +10,5 @@ const userSchema = mongoose.Schema({
 });
 //extra hook thats check your data before he insert in to db
 //now we get an error if we try to add user thats already exist in db
-userSchema.plugin(uniqueValidator);
+//userSchema.plugin(uniqueValidator);
 module.exports = mongoose.model("User", userSchema);
